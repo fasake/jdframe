@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="user"  namespace="/com/jdframe/sys/core/user"	extends="struts-default" >
+ 
+		<action	name = "changePwd" class= "com.jdframe.sys.biz.user.ChangePwdAction">
+			<result	name="init">/sys/core/user/changepwd.jsp</result>
+			<result	name="input">/sys/core/user/changepwd.jsp</result>
+			<result	name="success">/sys/core/user/changepwd.jsp</result>
+		</action> 
+		
+		
+		
+		<action	name = "query" class= "com.jdframe.sys.biz.user.QueryAction">
+			<result	name="success">/sys/core/user/query.jsp</result>
+			<result	name="input">/sys/core/user/query.jsp</result>
+			<result	name="init">/sys/core/user/query.jsp</result>
+		</action>
+		 
+		<action	name = "new" class= "com.jdframe.sys.biz.user.NewAction">
+		    <result	name="success">/sys/core/user/query.jsp</result>
+			<result	name="input">/sys/core/user/new.jsp</result>
+			<result	name="init">/sys/core/user/new.jsp</result>
+		</action>
+		
+		<action	name = "update" class= "com.jdframe.sys.biz.user.UpdateAction">
+			<result	name="success">/sys/core/user/query.jsp</result>
+			<result	name="input">/sys/core/user/update.jsp</result>
+			<result	name="init">/sys/core/user/update.jsp</result>
+		</action> 
+		
+		<action	name = "delete" class= "com.jdframe.sys.biz.user.DeleteAction">
+		    <result	name="success">/sys/core/user/query.jsp</result>
+			<result	name="input">/sys/core/user/query.jsp</result>
+			<result	name="init">/sys/core/user/query.jsp</result>
+		</action> 
+		
+		<action	name = "grant" class= "com.jdframe.sys.biz.user.GrantAction">
+		    <result	name="success">/sys/core/user/query.jsp</result>
+			<result	name="input">/sys/core/user/grant.jsp</result>
+			<result	name="init">/sys/core/user/grant.jsp</result>
+		</action> 
+	</package>
+</struts>    

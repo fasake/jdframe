@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="swdj"  namespace="/com/jdframe/work/biz/swdj"	extends="struts-default" >
+	
+		<action	name = "updateSldj" class= "work.biz.swdj.sldj.NewAction">
+		    <result	name="success">/work/biz/swdj/sldj.jsp</result>
+			<result	name="init" >/work/biz/swdj/sldj.jsp</result>
+			<result	name="input">/work/biz/swdj/sldj.jsp</result>
+		</action> 
+		
+		<action	name = "updateQdzgswjg" class= "work.biz.swdj.qdzgswjg.UpdateAction">
+		    <result	name="success">/work/biz/swdj/qdzzjg.jsp</result>
+			<result	name="init" >/work/biz/swdj/qdzzjg.jsp</result>
+			<result	name="input">/work/biz/swdj/qdzzjg.jsp</result>
+		</action>  
+		
+	</package>
+</struts>    

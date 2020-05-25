@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jdframe.sys.dao.mappers.t_sys_task_receive">
+
+	<select parameterType="map" id="getTaskReceiveByTaskId" resultType="t_sys_task_receive"> 
+	   SELECT * FROM t_sys_task_receive  t where t.task_id =  #{task_id} and t.task_receiver = #{task_receiver}
+	</select>
+	
+
+	<select parameterType="string" id="getTaskReceiveByReceiver" resultType="t_sys_task_receive"> 
+	   SELECT * FROM t_sys_task_receive  t where t.task_receive =  #{task_receive}
+	</select>
+	
+	
+	<update id="updateTaskReceive" parameterType="map">
+		update  t_sys_task_receive set
+					task_receive_date = to_date(#{task_receive_date} ,'YYYY-MM-DD HH24:MI:SS')
+				where task_id = #{task_id} and task_receiver = #{task_receiver}
+	</update> 
+	
+	<insert id="insertTaskReceive" parameterType="t_sys_task_receive">
+		insert into t_sys_task_receive(task_id,
+							task_receiver,
+							task_receive_date
+										) 
+										values(#{task_id},
+							#{task_receiver},
+							to_date(#{task_receive_date} ,'YYYY-MM-DD HH24:MI:SS')
+										)
+	
+	</insert>
+	
+</mapper>

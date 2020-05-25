@@ -1,0 +1,2 @@
+.Tab_LiActive {  display:block;height:28px; margin-top:4px; width:120px; line-height:28px; cursor:hand; float:left;background:url(/images/sys/MenuOver.gif); color:#fff; overflow:hidden;display:inline;}
+.Tab_LiNoActive {  display:block;height:28px; margin-top:4px; width:120px; line-height:28px; cursor:hand; float:left;background:url(/images/sys/MenuOut.gif); color:#B9B9B9; overflow:hidden;display:inline;}

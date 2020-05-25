@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="role"  namespace="/com/jdframe/sys/core/role"	extends="struts-default" >
+	    
+		<action	name = "query" class= "com.jdframe.sys.biz.role.QueryAction">
+			<result	name="success">/sys/core/role/main.jsp</result>
+			<result	name="input">/sys/core/role/main.jsp</result>
+			<result	name="init">/sys/core/role/main.jsp</result>
+		</action>
+		 
+		<action	name = "new" class= "com.jdframe.sys.biz.role.NewAction">
+		    <result	name="success">/sys/core/role/main.jsp</result>
+			<result	name="input">/sys/core/role/new.jsp</result>
+			<result	name="init">/sys/core/role/new.jsp</result>
+		</action>
+		
+		<action	name = "update" class= "com.jdframe.sys.biz.role.UpdateAction">
+			<result	name="success">/sys/core/role/main.jsp</result>
+			<result	name="input">/sys/core/role/update.jsp</result>
+			<result	name="init">/sys/core/role/update.jsp</result>
+		</action> 
+		
+		<action	name = "delete" class= "com.jdframe.sys.biz.role.DeleteAction">
+		    <result	name="success">/sys/core/role/main.jsp</result>
+			<result	name="input">/sys/core/role/main.jsp</result>
+			<result	name="init">/sys/core/role/main.jsp</result>
+		</action> 
+		
+	</package>
+</struts>    

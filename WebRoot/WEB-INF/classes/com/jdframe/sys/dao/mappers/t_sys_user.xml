@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jdframe.sys.dao.mappers.t_sys_user">
+   <select   id="getNewUserId" resultType="string"> 
+	   SELECT SEQ_USER_ID.NEXTVAL FROM DUAL 
+	</select>
+	
+   <select parameterType="t_sys_user" id="getUserByDmAndPass" resultType="t_sys_user"> 
+	   SELECT * FROM t_sys_user  t where t.user_dm =  #{user_dm}  and user_pwd = #{user_pwd}
+	</select>
+	
+	<select parameterType="string" id="getUserByUserDm" resultType="t_sys_user"> 
+	   SELECT * FROM t_sys_user  t where t.user_dm =  #{user_dm}
+	</select>
+	
+	<select parameterType="string" id="getUserByUserId" resultType="t_sys_user"> 
+	   SELECT * FROM t_sys_user  t where t.user_id =  #{user_id}
+	</select>
+	
+	<select parameterType="string" id="getUserByMenuId" resultType="t_sys_user"> 
+	   SELECT * FROM t_sys_user d where d.user_id in (
+              select a.grant_id from t_sys_grant c,t_sys_grant b,t_sys_grant a where  
+              c.grant_type='DM_ROLE_ASSO_MENU' 
+              and b.grant_type='DM_STATION_ASSO_ROLE' 
+              and a.grant_type = 'DM_USER_ASSO_STATION'
+              and c.grant_fid= #{menu_id}
+              and a.grant_fid = b.grant_id
+              and b.grant_fid = c.grant_id )
+              and user_zzjg_dm in (SELECT zzjg_dm FROM  t_sys_organization a start with zzjg_dm=#{user_zzjg_dm} connect by   zzjg_id_sj= PRIOR zzjg_id)
+	</select>
+	
+	<select parameterType="t_sys_user" id="getUser_listPage" resultType="t_sys_user"> 
+	   SELECT * FROM t_sys_user where user_zzjg_dm in (SELECT zzjg_dm FROM  t_sys_organization a start with zzjg_dm=#{user_zzjg_dm} connect by   zzjg_id_sj= PRIOR zzjg_id)
+	   <if test="user_dm != null and user_dm!='' ">
+	    and user_dm like '%'|| #{user_dm} ||'%'
+	   </if>
+	   <if test="user_name != null and user_name != '' ">
+	     and user_name like '%'|| #{user_name}|| '%'
+	   </if> 
+	   <if test="user_tel != null and user_tel != '' ">
+	     and user_tel like '%'|| #{user_tel}|| '%'
+	   </if> 
+	   <if test="user_mobile != null and user_mobile != '' ">
+	     and user_mobile like '%'|| #{user_mobile}|| '%'
+	   </if>
+	   <if test="user_email != null and user_email != '' ">
+	     and user_email like '%'|| #{user_email}|| '%'
+	   </if>
+	   order by user_dm
+	</select>
+	
+	 
+	
+	
+	<update id="updateUser" parameterType="t_sys_user">
+		update  t_sys_user 
+		<set>
+			<if test="user_name != null" >
+				user_name =  #{user_name},
+		    </if>
+			<if test="user_zzjg_dm != null" >
+				user_zzjg_dm =  #{user_zzjg_dm},
+			</if>
+			<if test="user_desc != null" >
+				user_desc =  #{user_desc},
+			</if>
+			<if test="user_tel != null" >
+				user_tel =  #{user_tel},
+			</if>
+			<if test="user_pwd != null" >
+				user_pwd =  #{user_pwd},
+			</if>
+			<if test="user_mobile != null" >
+				user_mobile =  #{user_mobile},
+			</if>
+			<if test="user_email != null" >
+				user_email =  #{user_email},
+			</if>
+	   </set>
+			where user_dm = #{user_dm}
+	</update>
+	
+	
+	
+	<insert id="insertUser" parameterType="t_sys_user">
+		insert into t_sys_user
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+				 <if test="user_name != null" >
+				    user_name,
+				 </if>
+				  <if test="user_id != null" >
+				    user_id,
+				 </if>
+				  <if test="user_dm != null" >
+				    user_dm,
+				 </if>
+				  <if test="user_pwd != null" >
+				    user_pwd,
+				 </if>
+				  <if test="user_zzjg_dm != null" >
+				    user_zzjg_dm,
+				 </if>
+				  <if test="user_desc != null" >
+				    user_desc,
+				 </if>
+				  <if test="user_tel != null" >
+				    user_tel,
+				 </if>
+				  <if test="user_mobile != null" >
+				    user_mobile,
+				 </if>
+				  <if test="user_email != null" >
+				    user_email,
+				 </if> 
+		 </trim>
+	     <trim prefix="values (" suffix=")" suffixOverrides="," >
+	             <if test="user_name != null" >
+				    #{user_name},
+				 </if>
+				  <if test="user_id != null" >
+				    #{user_id},
+				 </if>
+				  <if test="user_dm != null" >
+				    #{user_dm},
+				 </if>
+				  <if test="user_pwd != null" >
+				    #{user_pwd},
+				 </if>
+				  <if test="user_zzjg_dm != null" >
+				    #{user_zzjg_dm},
+				 </if>
+				  <if test="user_desc != null" >
+				    #{user_desc},
+				 </if>
+				  <if test="user_tel != null" >
+				    #{user_tel},
+				 </if>
+				  <if test="user_mobile != null" >
+				    #{user_mobile},
+				 </if>
+				  <if test="user_email != null" >
+				    #{user_email},
+				 </if> 
+	  </trim>
+	</insert>
+	
+	<delete id="deleteUserById" parameterType="t_sys_user">
+	    delete from t_sys_user where user_id=#{user_id}
+	</delete>
+	
+	<delete id="deleteUserByDm" parameterType="t_sys_user">
+	    delete from t_sys_user where user_dm=#{user_dm}
+	</delete>
+	
+	
+</mapper>

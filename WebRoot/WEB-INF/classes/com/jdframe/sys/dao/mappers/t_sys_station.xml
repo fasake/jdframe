@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jdframe.sys.dao.mappers.t_sys_station">
+
+	<select id="getNewStationId" resultType="string">
+		SELECT SEQ_Station_ID.NEXTVAL FROM DUAL
+	</select>
+
+	<select parameterType="string" id="getStationByStationId"
+		resultType="t_sys_station">
+		SELECT * FROM t_sys_station t where t.Station_id = #{station_id}
+	</select>
+
+
+	<select parameterType="string" id="getStationByStationName"
+		resultType="t_sys_station">
+		SELECT * FROM t_sys_station t where t.Station_name = #{station_name}
+	</select>
+
+	<select parameterType="t_sys_station" id="getStation_listPage"
+		resultType="t_sys_station">
+		SELECT * FROM t_sys_station where station_zzjg_dm = #{station_zzjg_dm}
+		<if test="station_id != null and station_id != '' ">
+			and Station_id like '%'|| #{station_id} ||'%'
+		</if>
+		<if test="station_name != null and station_name != '' ">
+			and Station_name like '%'|| #{station_name}|| '%'
+		</if>
+
+		order by Station_order
+	</select>
+
+	<select parameterType="string" id="buildStationTree" resultType="t_sys_station">
+		select
+		'd.add('||station_id||',1,'''||station_name||''',''javascript:viewstation('||station_id||')'','||station_id||',true);'
+		station_name
+		from t_sys_station where station_zzjg_dm=#{station_zzjg_dm} order by
+		station_id
+	</select>
+
+	<update id="updateStation" parameterType="t_sys_station">
+		update t_sys_station
+		<set>
+			<if test="station_name != null">
+				station_name = #{station_name},
+			</if>
+			<if test="station_desc != null">
+				station_desc = #{station_desc},
+			</if>
+			<if test="station_role_id != null">
+				station_role_id = #{station_role_id},
+			</if>
+			<if test="station_zzjg_dm != null">
+				station_zzjg_dm = #{station_zzjg_dm},
+			</if>
+			<if test="station_order != null">
+				station_order = #{station_order},
+			</if>
+			<if test="station_scope != null">
+				station_scope = #{station_scope},
+			</if>
+		</set>
+		where station_id = #{station_id}
+
+	</update>
+
+	<insert id="insertStation" parameterType="t_sys_station">
+		insert into t_sys_station
+		  <trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="station_creater != null">
+				station_creater,
+			</if>
+			<if test="station_create_date != null">
+				station_create_date,
+			</if>
+			<if test="station_id != null">
+				station_id,
+			</if>
+			<if test="station_name != null">
+				station_name,
+			</if>
+			<if test="station_desc != null">
+				station_desc,
+			</if>
+			<if test="station_role_id != null">
+				station_role_id,
+			</if>
+			<if test="station_zzjg_dm != null">
+				station_zzjg_dm,
+			</if>
+			<if test="station_order != null">
+				station_order,
+			</if>
+			<if test="station_scope != null">
+				station_scope
+			</if>
+		 </trim>
+		 <trim prefix="values (" suffix=")" suffixOverrides=",">
+
+			<if test="station_creater != null">
+				#{station_creater},
+			</if>
+			<if test="station_create_date != null">
+				to_date(#{station_create_date},'YYYY-MM-DD HH24:MI:SS'),
+			</if>
+			<if test="station_id != null">
+				#{station_id},
+			</if>
+			<if test="station_name != null">
+				#{station_name},
+			</if>
+			<if test="station_desc != null">
+				#{station_desc},
+			</if>
+			<if test="station_role_id != null">
+				#{station_role_id},
+			</if>
+			<if test="station_zzjg_dm != null">
+				#{station_zzjg_dm},
+			</if>
+			<if test="station_order != null">
+				#{station_order},
+			</if>
+			<if test="station_scope != null">
+				#{station_scope},
+			</if>
+		</trim>
+	</insert>
+
+	<delete id="deleteStationById" parameterType="t_sys_station">
+		delete from t_sys_station where Station_id=#{station_id}
+	</delete>
+</mapper>

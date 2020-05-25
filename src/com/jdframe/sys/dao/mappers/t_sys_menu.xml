@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jdframe.sys.dao.mappers.t_sys_menu">
+
+	<select id="getNewMenuId" resultType="string">
+		SELECT SEQ_Menu_ID.NEXTVAL FROM DUAL
+	</select>
+
+	<select parameterType="string" id="getMenuByMenuId" resultType="t_sys_menu">
+		SELECT * FROM t_sys_menu t where t.Menu_id = #{menu_id}
+	</select>
+
+	<select parameterType="string" id="getMenuParentIdByMenuId"
+		resultType="t_sys_menu">
+		SELECT * FROM T_SYS_MENU t start with t.menu_id = #{menu_id} connect by
+		menu_id= PRIOR menu_parent_id
+	</select>
+
+	<select parameterType="string" id="getMenuByMenuParentId"
+		resultType="t_sys_menu">
+		SELECT * FROM t_sys_menu t where t.menu_parent_id = #{menu_parent_id}
+	</select>
+
+	<select parameterType="string" id="buildMenuTreeByPId"
+		resultType="t_sys_menu">
+		select
+		'd.add('||menu_id||','||menu_parent_id||','''||menu_name||''',''javascript:viewMenu('||menu_id||')'','||menu_id||');'
+		menu_name
+		from t_sys_menu where menu_isvalid='Y' and menu_parent_id =
+		#{menu_parent_id} order by menu_id
+	</select>
+
+	<select parameterType="string" id="buildMenuTree" resultType="t_sys_menu">
+		select
+		'd.add('||menu_id||','||menu_parent_id||','''||menu_name||''',''javascript:viewMenu('||menu_id||')'','||menu_id||',true);'
+		menu_name
+		from t_sys_menu  order by menu_id
+	</select>
+
+	<select parameterType="string" id="getMenuByMenuName"
+		resultType="t_sys_menu">
+		SELECT * FROM t_sys_menu t where t.Menu_name = #{menu_name}
+	</select>
+
+	<select parameterType="t_sys_menu" id="getMenu_listPage"
+		resultType="t_sys_menu">
+		SELECT * FROM t_sys_menu where menu_parent_id = #{menu_parent_id}
+		<if test="menu_id != null and menu_id != '' ">
+			and Menu_id like '%'|| #{menu_id} ||'%'
+		</if>
+		<if test="menu_name != null and menu_name != '' ">
+			and Menu_name like '%'|| #{menu_name}|| '%'
+		</if>
+
+		order by Menu_id
+	</select>
+
+
+	<select parameterType="string" id="getMenuCatalogueByZzjgDm"
+		resultType="t_sys_menu">
+		SELECT * FROM t_sys_menu where
+		menu_isleaf='N'
+		and menu_isvalid='Y'
+		and menu_privilege in (SELECT zzjg_dm FROM t_sys_organization a start
+		with zzjg_dm=#{zzjg_dm} connect by zzjg_id = PRIOR zzjg_id_sj)
+		order by menu_id,menu_create_date
+	</select>
+
+
+	<select parameterType="map" id="getMenuCatalogueByUserId"
+		resultType="t_sys_menu">
+		SELECT * FROM t_sys_menu where
+		menu_isleaf='N'
+		and menu_isvalid='Y'
+		and menu_privilege in (SELECT zzjg_dm FROM t_sys_organization a start
+		with zzjg_dm=#{zzjg_dm} connect by zzjg_id = PRIOR zzjg_id_sj)
+		and menu_id in (
+		select c.grant_fid from t_sys_grant c,t_sys_grant b,t_sys_grant a where
+		c.grant_type='DM_ROLE_ASSO_MENU'
+		and b.grant_type='DM_STATION_ASSO_ROLE'
+		and a.grant_type = 'DM_USER_ASSO_STATION'
+		and a.grant_id=#{user_id}
+		and a.grant_fid = b.grant_id
+		and b.grant_fid = c.grant_id )
+		order by menu_id,menu_create_date
+	</select>
+
+	<select parameterType="map" id="getMenuLeafByParentId"
+		resultType="t_sys_menu">
+		SELECT * FROM t_sys_menu where
+		menu_isleaf='Y'
+		and menu_isvalid='Y'
+		and menu_parent_id=#{menu_parent_id}
+		and menu_privilege in (SELECT zzjg_dm FROM t_sys_organization a start
+		with zzjg_dm=#{zzjg_dm} connect by zzjg_id = PRIOR zzjg_id_sj)
+		and menu_id in (
+		select c.grant_fid from t_sys_grant c,t_sys_grant b,t_sys_grant a where
+		c.grant_type='DM_ROLE_ASSO_MENU'
+		and b.grant_type='DM_STATION_ASSO_ROLE'
+		and a.grant_type = 'DM_USER_ASSO_STATION'
+		and a.grant_id=#{user_id}
+		and a.grant_fid = b.grant_id
+		and b.grant_fid = c.grant_id )
+		order by menu_id,menu_create_date
+	</select>
+
+
+	<select parameterType="map" id="getMenusByUserId" resultType="t_sys_menu">
+		SELECT * FROM t_sys_menu where
+		menu_isleaf='Y'
+		and menu_isvalid='Y'
+		and menu_privilege in (SELECT zzjg_dm FROM t_sys_organization a start
+		with zzjg_dm=#{zzjg_dm} connect by zzjg_id = PRIOR zzjg_id_sj)
+		and menu_id in (
+		select c.grant_fid from t_sys_grant c,t_sys_grant b,t_sys_grant a where
+		c.grant_type='DM_ROLE_ASSO_MENU'
+		and b.grant_type='DM_STATION_ASSO_ROLE'
+		and a.grant_type = 'DM_USER_ASSO_STATION'
+		and a.grant_id=#{user_id}
+		and a.grant_fid = b.grant_id
+		and b.grant_fid = c.grant_id )
+		order by menu_id,menu_create_date
+	</select>
+
+
+
+	<select parameterType="map" id="getMenuLeaf" resultType="t_sys_menu">
+		SELECT * FROM t_sys_menu
+		where menu_isleaf = 'Y'
+		and menu_isvalid='Y'
+		and menu_parent_id = #{menu_parent_id}
+		and menu_privilege in
+		(SELECT zzjg_dm FROM t_sys_organization a start with zzjg_dm =#{zzjg_dm}
+		connect by zzjg_id = PRIOR zzjg_id_sj)
+		order by menu_id, menu_create_date
+	</select>
+
+
+	<update id="updateMenu" parameterType="t_sys_menu">
+		update t_sys_menu
+		<set>
+			<if test="menu_name != null">
+				menu_name = #{menu_name},
+			</if>
+			<if test="menu_url != null">
+				menu_url = #{menu_url},
+			</if>
+			<if test="menu_system != null">
+				menu_system = #{menu_system},
+			</if>
+			<if test="menu_argument != null">
+				menu_argument = #{menu_argument},
+			</if>
+			<if test="menu_privilege != null">
+				menu_privilege =
+				#{menu_privilege},
+			</if>
+			<if test="menu_isvalid != null">
+				menu_isvalid = #{menu_isvalid},
+			</if>
+			<if test="menu_isleaf != null">
+				menu_isleaf = #{menu_isleaf},
+			</if>
+			<if test="menu_parent_id != null">
+				menu_parent_id =
+				#{menu_parent_id}
+			</if>
+		</set>
+		where menu_id = #{menu_id}
+
+	</update>
+
+	<insert id="insertMenu" parameterType="t_sys_menu">
+		insert into t_sys_menu
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="menu_id != null">
+				menu_id,
+			</if>
+			<if test="menu_name != null">
+				menu_name,
+			</if>
+			<if test="menu_url != null">
+				menu_url,
+			</if>
+			<if test="menu_system != null">
+				menu_system,
+			</if>
+			<if test="menu_argument != null">
+				menu_argument,
+			</if>
+			<if test="menu_create != null">
+				menu_create,
+			</if>
+			<if test="menu_create_date != null">
+				menu_create_date,
+			</if>
+			<if test="menu_privilege != null">
+				menu_privilege,
+			</if>
+			<if test="menu_isvalid != null">
+				menu_isvalid,
+			</if>
+			<if test="menu_parent_id != null">
+				menu_parent_id,
+			</if>
+			<if test="menu_isleaf != null">
+				menu_isleaf
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="menu_id != null">
+				#{menu_id},
+			</if>
+			<if test="menu_name != null">
+				#{menu_name},
+			</if>
+			<if test="menu_url != null">
+				#{menu_url},
+			</if>
+			<if test="menu_system != null">
+				#{menu_system},
+			</if>
+			<if test="menu_argument != null">
+				#{menu_argument},
+			</if>
+			<if test="menu_create != null">
+				#{menu_create},
+			</if>
+			<if test="menu_create_date != null">
+				to_date(#{menu_create_date},'YYYY-MM-DD HH24:MI:SS'),
+			</if>
+			<if test="menu_privilege != null">
+				#{menu_privilege},
+			</if>
+			<if test="menu_isvalid != null">
+				#{menu_isvalid},
+			</if>
+			<if test="menu_parent_id != null">
+				#{menu_parent_id},
+			</if>
+			<if test="menu_isleaf != null">
+				#{menu_isleaf},
+			</if>
+		</trim>
+
+	</insert>
+
+	<delete id="deleteMenuById" parameterType="t_sys_menu">
+		delete from t_sys_menu where Menu_id=#{menu_id}
+	</delete>
+</mapper>

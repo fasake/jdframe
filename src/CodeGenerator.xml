@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="GBK"?>  
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">  
+<generatorConfiguration>  
+   <!-- classPathEntry:Oracle数据库的JDBC驱动路径，根据你本地路径修改  
+   <classPathEntry location="E:\temp\classes12.jar" />   -->
+   <context id="OracleTables" targetRuntime="MyBatis3">        
+       <!-- 自动生成的注释 -->  
+        <commentGenerator>  
+          <property name="suppressAllComments" value="false" />  
+        </commentGenerator>    
+         <!-- Oracle数据库驱动、URL及用户名和密码-->   
+        <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver" connectionURL="jdbc:oracle:thin:@localhost:1521:taxweb" userId="taxuser" password="taxuser"> 
+       </jdbcConnection>  
+               
+        <javaTypeResolver >  
+           <property name="forceBigDecimals" value="false" />  
+        </javaTypeResolver>           
+        
+        <!-- model配置即 VALUEOBJECT对象  业务类：work.dao.model 系统类：com.jdframe.sys.dao.model -->
+        <javaModelGenerator targetPackage="work.dao.model" targetProject="E:\temp\src">  
+            <property name="constructorBased" value="true" /> 
+            <property name="rootClass" value="com.jdframe.sys.core.model.T_vo" />  
+            <property name="enableSubPackages" value="true" />  
+            <property name="trimStrings" value="true" />  
+            <property name="generateExample" value="false" />  
+       </javaModelGenerator>  
+       <!-- xml配置即 数据映射文件 业务类：work.dao.mappers 系统类：com.jdframe.sys.dao.mappers -->
+       <sqlMapGenerator targetPackage="work.dao.mappers"  targetProject="E:\temp\src">  
+            <property name="enableSubPackages" value="true" />  
+        </sqlMapGenerator>  
+         
+        <!-- 接口配置  不建议使用接口
+        <javaClientGenerator type="XMLMAPPER" targetPackage="work.dao"  targetProject="E:\temp\src">  
+            <property name="enableSubPackages" value="true" />  
+        </javaClientGenerator>    
+        -->         
+        <!-- 需要生成的表名，支持多个；tableName:数据库表名；domainObjectName: 【VALUEOBJECT对象类名 】-->  
+        <table tableName="t_work_tiden" domainObjectName="T_work_tiden" >
+           <property name="generateExample" value="true"/>          
+           <property name="namespace" value="/work/biz/tiden"/>
+           <property name="targetProject" value="E:\temp\src"/>
+           
+        </table>  
+    </context>       
+</generatorConfiguration>  

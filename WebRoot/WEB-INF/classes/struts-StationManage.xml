@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="station"  namespace="/com/jdframe/sys/core/station"	extends="struts-default" >
+		<action	name = "query" class= "com.jdframe.sys.biz.station.QueryAction">
+			<result	name="success">/sys/core/station/main.jsp</result>
+			<result	name="input">/sys/core/station/main.jsp</result>
+			<result	name="init">/sys/core/station/main.jsp</result>
+		</action>
+		 
+		<action	name = "new" class= "com.jdframe.sys.biz.station.NewAction">
+		    <result	name="success">/sys/core/station/main.jsp</result>
+			<result	name="input">/sys/core/station/new.jsp</result>
+			<result	name="init">/sys/core/station/new.jsp</result>
+		</action>
+		
+		<action	name = "update" class= "com.jdframe.sys.biz.station.UpdateAction">
+			<result	name="success">/sys/core/station/main.jsp</result>
+			<result	name="input">/sys/core/station/update.jsp</result>
+			<result	name="init">/sys/core/station/update.jsp</result>
+		</action> 
+		
+		<action	name = "delete" class= "com.jdframe.sys.biz.station.DeleteAction">
+		    <result	name="success">/sys/core/station/main.jsp</result>
+			<result	name="input">/sys/core/station/main.jsp</result>
+			<result	name="init">/sys/core/station/main.jsp</result>
+		</action> 
+	</package>
+</struts>    

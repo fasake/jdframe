@@ -1,0 +1,24 @@
+/*批量编辑相关设定*/
+table.editGrid {width:100%;
+     padding:1px;
+     font-size : 10pt;
+	   border : 1px solid #999;
+	   border-collapse : collapse;}
+tr.editGridHd {background:#d9d9d9  repeat-x center;
+     text-align : center;
+     height : 24px;}
+tr.editGrid {background:#ffffff repeat-x center;
+     height : 24px;}
+td.editGridHd {
+     border:1px solid #999 ;
+     font-size : 10pt;
+     padding : 2px;
+	 FONT-WEIGHT: bold}
+td.editGrid {border:1px solid #999;
+     font-size : 10pt;
+     padding : 2px;
+	 background:#f7f7f7 repeat-x center;}
+#cdosubmitdiv{-moz-opacity: 0.5;  
+            opacity: 0.5;  
+            filter: alpha(opacity=50);   
+            background: #fff;}

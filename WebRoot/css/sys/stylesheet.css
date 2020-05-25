@@ -1,0 +1,360 @@
+BODY {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; FONT-SIZE: 9pt; MARGIN: 0pt; BORDER-LEFT: 0px; COLOR: black; BORDER-BOTTOM: 0px; FONT-FAMILY: "宋体，黑体"; BACKGROUND-COLOR: #ffffff; margin-width: 0; margin-height: 0
+}
+P {
+	FONT-SIZE: 9pt; LETTER-SPACING: 1px
+}
+TD {
+	FONT-SIZE: 9pt
+}
+.bg {
+	BACKGROUND-POSITION: right top; FONT-SIZE: 9pt; BACKGROUND-ATTACHMENT: fixed; BACKGROUND-REPEAT: no-repeat; BACKGROUND-COLOR: #c9d600
+}
+.bg_welcome {
+	FONT-SIZE: 9pt; BACKGROUND: url(../images/prompt/welcome_bg.jpg) #c9d600 fixed no-repeat right top
+}
+.content {
+	FONT-SIZE: 14px;
+	COLOR: 000000;
+	LETTER-SPACING: 2px;
+	BACKGROUND-COLOR: ceffce;
+	background: url(../images/main_31.gif) repeat-x;
+	TEXT-ALIGN: center;
+	font-weight: bold;
+}
+.td {
+	BACKGROUND-POSITION: right 50%; BACKGROUND-ATTACHMENT: fixed; BACKGROUND-REPEAT: no-repeat
+}
+.td1 {
+	FONT-WEIGHT: bold; FONT-SIZE: 9pt; LETTER-SPACING: 2px
+}
+.td2 {
+	FONT-WEIGHT: bold; FONT-SIZE: 9pt; TEXT-ALIGN: center
+}
+.td3 {
+	FONT-WEIGHT: bold; FONT-SIZE: 9pt; TEXT-ALIGN: right
+}
+.td4 {
+	FONT-SIZE: 9pt; TEXT-ALIGN: center
+}
+.td5 {
+	FONT-SIZE: 9pt; TEXT-ALIGN: right
+}
+.td6 {
+	FONT-SIZE: 9pt; COLOR: #999999
+}
+.td7 {
+	FONT-SIZE: 9pt; COLOR: #000000; BACKGROUND-COLOR: #dedfdf; TEXT-ALIGN: left
+}
+.td8 {
+	FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #0000ff; BACKGROUND-COLOR: #c9b7ab; TEXT-ALIGN: right
+}
+.boldhead {
+	BORDER-RIGHT: #d9d9d9 1px solid; BORDER-TOP: #d9d9d9 1px solid; FONT-WEIGHT: bold; FONT-SIZE: 9pt; BORDER-LEFT: #d9d9d9 1px solid; COLOR: #006600; BORDER-BOTTOM: #d9d9d9 1px solid; LETTER-SPACING: 2px; BACKGROUND-COLOR: #d9d9d9; TEXT-ALIGN: center
+}
+.boldhead1 {
+	BORDER-RIGHT: #d9d9d9 1px solid; BORDER-TOP: #d9d9d9 1px solid; FONT-WEIGHT: bold; FONT-SIZE: 9pt; BORDER-LEFT: #d9d9d9 1px solid; COLOR: #f0960f; BORDER-BOTTOM: #d9d9d9 1px solid; LETTER-SPACING: 2px; BACKGROUND-COLOR: #d9d9d9; TEXT-ALIGN: center;background: url(../images/main_31.gif) repeat-x
+}
+.boldhead2 {
+	BORDER-RIGHT: #d9d9d9 1px solid;
+	BORDER-TOP: #d9d9d9 1px solid;
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 9pt;
+	BORDER-LEFT: #d9d9d9 1px solid;
+	COLOR: #000000;
+	BORDER-BOTTOM: #d9d9d9 1px solid;
+	LETTER-SPACING: 2px;
+	BACKGROUND-COLOR: #d9d9d9;
+	TEXT-ALIGN: center;
+	background: url(../images/main_31.gif) repeat-x
+}
+.boldhead3 {
+	BORDER-RIGHT: #d9d9d9 1px solid; BORDER-TOP: #d9d9d9 1px solid; FONT-WEIGHT: bold; FONT-SIZE: 9pt; BORDER-LEFT: #d9d9d9 1px solid; COLOR: #008100; BORDER-BOTTOM: #d9d9d9 1px solid; LETTER-SPACING: 3px; BACKGROUND-COLOR: #d9d9d9; TEXT-ALIGN: center;background: url(../images/main_31.gif) repeat-x
+}
+.bold {
+	FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #000000; FONT-FAMILY: "宋体"; LETTER-SPACING: 2px
+}
+.back {
+	FONT-SIZE: 9pt; COLOR: #80723b; BACKGROUND-COLOR: #c9b7ab
+}
+.back1 {
+	FONT-SIZE: 9pt; COLOR: #000000; LETTER-SPACING: 2px; BACKGROUND-COLOR: #CCCCCC; TEXT-ALIGN: center; bordercolor: #C9C9C9
+}
+.back2 {
+	FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #000000; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: center
+}
+.back3 {
+	FONT-SIZE: 9pt; BACKGROUND-COLOR: #f7f7f7; TEXT-ALIGN: center
+}
+.back4 {
+	FONT-SIZE: 9pt; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: center
+}
+.back5 {
+	BACKGROUND-COLOR: #f7f7f7; TEXT-ALIGN: left
+}
+.backx {
+	BACKGROUND-COLOR: #f7f7f7
+}
+.backsubmit {
+	BACKGROUND-COLOR: #f7f7f7; TEXT-ALIGN: center
+}
+.back6 {
+	BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left
+}
+.back_3 {
+	FONT-WEIGHT: bold; FONT-SIZE: 78pt; BACKGROUND-COLOR: #f7f7f7; TEXT-ALIGN: center
+}
+.back_4 {
+	FONT-WEIGHT: bold; FONT-SIZE: 7pt; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: center
+}
+.back_5 {
+	FONT-SIZE: 7pt; BACKGROUND-COLOR: #f7f7f7; TEXT-ALIGN: left
+}
+.back_6 {
+	FONT-SIZE: 7pt; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: left
+}
+.back9 {
+	BACKGROUND-POSITION: 50% bottom; FONT-WEIGHT: bold; FONT-SIZE: 9pt; BACKGROUND-ATTACHMENT: fixed; BACKGROUND-IMAGE: url(../add/images/failure_03bg_below.gif); COLOR: #fc7e01; BACKGROUND-REPEAT: repeat-x; LETTER-SPACING: 2px
+}
+.line {
+	BORDER-RIGHT: #487dd9 1px solid; BORDER-TOP: #487dd9 1px solid; BORDER-LEFT: #487dd9 1px solid; BORDER-BOTTOM: #487dd9 1px solid; TEXT-ALIGN: center
+}
+.line1 {
+	BORDER-RIGHT: #ffffff 1px solid; BORDER-TOP: #ffffff 1px solid; BORDER-LEFT: #ffffff 1px solid; BORDER-BOTTOM: #ffffff 1px solid; TEXT-ALIGN: center
+}
+.line2 {
+	BORDER-RIGHT: #ffffff 1px solid; BORDER-TOP: #ffffff 1px solid; BORDER-LEFT: #ffffff 1px solid; BORDER-BOTTOM: #ffffff 1px solid
+}
+.bga {
+	BORDER-RIGHT: #ffffff 1px solid; BORDER-TOP: #ffffff 1px solid; BORDER-LEFT: #ffffff 1px solid; BORDER-BOTTOM: #ffffff 1px solid; BACKGROUND-COLOR: #f7f7f7; TEXT-ALIGN: center
+}
+.bg {
+	BORDER-RIGHT: #ffffff 0px solid; BORDER-TOP: #ffffff 0px solid; BORDER-LEFT: #ffffff 0px solid; BORDER-BOTTOM: #ffffff 0px solid; BACKGROUND-COLOR: #dedfdf; TEXT-ALIGN: center
+}
+.bg1 {
+	BORDER-RIGHT: #8da34e 1px solid; BORDER-TOP: #8da34e 1px solid; BORDER-LEFT: #8da34e 1px solid; BORDER-BOTTOM: #8da34e 1px solid; TEXT-ALIGN: center
+}
+.bg2 {
+	BORDER-RIGHT: #ffffff 1px solid; BORDER-TOP: #ffffff 1px solid; BORDER-LEFT: #ffffff 1px solid; BORDER-BOTTOM: #ffffff 1px solid; BACKGROUND-COLOR: #dedfdf
+}
+.bg3 {
+	BORDER-RIGHT: #8da34e 1px solid; BORDER-TOP: #8da34e 1px solid; BORDER-LEFT: #8da34e 1px solid; BORDER-BOTTOM: #8da34e 1px solid; BACKGROUND-COLOR: #f7f7f7; TEXT-ALIGN: center
+}
+.bg4 {
+	BORDER-RIGHT: #00cc66 solid; BORDER-TOP: #00cc66 solid; BACKGROUND: #dedfdf; BORDER-LEFT: #00cc66 solid; BORDER-BOTTOM: #00cc66 solid
+}
+.small {
+	FONT-SIZE: 9pt
+}
+.big {
+	FONT-WEIGHT: bold; FONT-SIZE: 12pt
+}
+.footer {
+	FONT-SIZE: 8pt; COLOR: #d7d7d7; FONT-FAMILY: arial; BACKGROUND-COLOR: #008100; TEXT-ALIGN: center
+}
+.english {
+	FONT-SIZE: 9pt; FONT-FAMILY: arial
+}
+.white {
+	FONT-SIZE: 9pt; COLOR: #ffffff
+}
+.gray {
+	FONT-SIZE: 9pt; COLOR: #999999
+}
+.red {
+	FONT-SIZE: 9pt; COLOR: #ff6600
+}
+.red1 {
+	FONT-SIZE: 9pt; COLOR: #fc7e01
+}
+.green {
+	FONT-SIZE: 9pt; COLOR: #28560f
+}
+.boldred {
+	FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #fc7e01; LETTER-SPACING: 2px
+}
+.boldgreen {
+	FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #008100; LETTER-SPACING: 2px
+}
+.boldwhite {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #ffffff; FONT-FAMILY: "宋体"
+}
+.rim {
+	BACKGROUND-COLOR: #000000
+}
+.rim1 {
+	BACKGROUND-COLOR: #808080
+}
+.toprim {
+	BACKGROUND-COLOR: #000000
+}
+A:link {
+	COLOR: #B40000; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #B40000; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #0000FF; TEXT-DECORATION: underline
+}
+.w-b:link {
+	COLOR: #000083; LETTER-SPACING: 2px; TEXT-DECORATION: none
+}
+.w-b:visited {
+	COLOR: #000083; LETTER-SPACING: 2px; TEXT-DECORATION: none
+}
+.w-b:hover {
+	COLOR: #ffffff; LETTER-SPACING: 2px; TEXT-DECORATION: none
+}
+.w-b:active {
+	COLOR: #000083; LETTER-SPACING: 2px; TEXT-DECORATION: none
+}
+.b-w:link {
+	COLOR: #000000; LETTER-SPACING: 1px; TEXT-DECORATION: none
+}
+.b-w:visited {
+	COLOR: #000000; LETTER-SPACING: 1px; TEXT-DECORATION: none
+}
+.b-w:hover {
+	COLOR: #ffffff; LETTER-SPACING: 1px; TEXT-DECORATION: none
+}
+.b-w:active {
+	COLOR: #000000; LETTER-SPACING: 1px; TEXT-DECORATION: none
+}
+.b-r:link {
+	COLOR: #000000; LETTER-SPACING: 1px; TEXT-DECORATION: none
+}
+.b-r:visited {
+	COLOR: #000000; LETTER-SPACING: 1px; TEXT-DECORATION: none
+}
+.b-r:hover {
+	COLOR: #ff0033; LETTER-SPACING: 1px; TEXT-DECORATION: none
+}
+.b-r:active {
+	COLOR: #000000; LETTER-SPACING: 1px; TEXT-DECORATION: none
+}
+.head:link {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+.head:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+.head:hover {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.head:active {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+.side:hover {
+	COLOR: #ff6600; TEXT-DECORATION: none
+}
+.side:active {
+	COLOR: #999999; TEXT-DECORATION: none
+}
+.change:link {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+.change:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+.change:hover {
+	COLOR: #ff3333; BACKGROUND-COLOR: #99cd00; TEXT-DECORATION: none
+}
+.wy1:active {
+	FONT-SIZE: 9pt; COLOR: #99ff33
+}
+.wy1:hover {
+	FONT-SIZE: 9pt; COLOR: #000000; BACKGROUND-COLOR: #edfcf1; TEXT-DECORATION: underline
+}
+INPUT.text {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid
+}
+INPUT.text1 {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid; BACKGROUND-COLOR: #eeeeee
+}
+SELECT.option {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #c4e759 1px solid; BORDER-LEFT: #c4e759 1px solid; BORDER-BOTTOM: #c4e759 1px solid; BACKGROUND-COLOR: #eeeeee
+}
+INPUT.button {
+	BORDER-RIGHT: #c4e759 1px double; BORDER-TOP: #c4e759 1px double; FONT-SIZE: 9pt; BORDER-LEFT: #c4e759 1px double; COLOR: #333333; BORDER-BOTTOM: #c4e759 1px double; HEIGHT: 16px; BACKGROUND-COLOR: #ccff99
+}
+
+INPUT.buttonWindy {
+	BORDER-RIGHT: 0px ridge; BORDER-TOP: 0px ridge; FONT-SIZE: 9pt; BORDER-LEFT: 0px ridge; COLOR: #000003; BORDER-BOTTOM: 0px ridge; BACKGROUND-COLOR: #ffffff
+}
+INPUT.button2 {
+	BORDER-RIGHT: #ffffcc 1px ridge; BORDER-TOP: #ffffcc 1px ridge; FONT-SIZE: 9pt; BORDER-LEFT: #ffffcc 1px ridge; COLOR: #333333; BORDER-BOTTOM: #ffffcc 1px ridge; BACKGROUND-COLOR: #ffcc00
+}
+INPUT.button3 {
+	border: 1px #003366 solid; FONT-SIZE: 9pt; text-align: center; BACKGROUND-COLOR: #CECFCE
+}
+INPUT.button5 {
+	BORDER-RIGHT: #00596b 1px solid; BORDER-TOP: #00596b 1px solid; FONT-SIZE: 9pt; BORDER-LEFT: #00596b 6px solid; COLOR: #000000; BORDER-BOTTOM: #00596b 1px solid; BACKGROUND-COLOR: #ffffff
+}
+INPUT.button4 {
+	BORDER-RIGHT: 1px ridge; BORDER-TOP: 1px ridge; FONT-WEIGHT: bold; FONT-SIZE: 9pt; MARGIN-BOTTOM: 2px; BORDER-LEFT: 1px ridge; COLOR: #000000; BORDER-BOTTOM: 1px ridge; FONT-FAMILY: "Arial"; LETTER-SPACING: 2px; HEIGHT: 18px; BACKGROUND-COLOR: #ffcc00
+}
+FIELDSET.aaa {
+	BORDER-RIGHT: #eaeaea 2px groove; BORDER-TOP: #eaeaea 2px groove; BORDER-LEFT: #eaeaea 2px groove; BORDER-BOTTOM: #eaeaea 2px groove
+}
+LEGEND.aaa {
+	BORDER-RIGHT: #000000 1px outset; BORDER-TOP: #000000 1px outset; FONT-WEIGHT: bold; FONT-SIZE: 9px; BORDER-LEFT: #000000 1px outset; BORDER-BOTTOM: #000000 1px outset; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; LETTER-SPACING: 3px; BACKGROUND-COLOR: #ffccff
+}
+@media print {.pbutton1{display: none;BORDER-RIGHT: 1px ridge; BORDER-TOP: 1px ridge; FONT-SIZE: 9pt; BORDER-LEFT: 1px ridge; COLOR: 000000; BORDER-BOTTOM: 1px ridge; BACKGROUND-COLOR: #CCCCCC}}
+.back3ar {
+	font-size: 9pt;
+	background-color: #f7f7f7;
+	text-align: left;
+
+}
+.tableTitle {
+	background-color: #CCCCCC;
+	text-align: center;
+	height: 22px;
+
+
+}
+.editDisable {
+	background-color: #f7f7f7;
+	text-align: left;
+color : Gray;
+
+}
+.tablebg {
+	background-color: #999999;
+}
+.tableLeft {
+	background-color: #f7f7f7;
+	text-align: right;
+	font-size: 9pt;
+
+}
+.tableCenter {
+	font-size: 9pt;
+	text-align: center;
+	background-color: #f7f7f7;
+
+}
+.tableRight {
+	text-align: left;
+	font-size: 9pt;
+	background-color: #f7f7f7;
+
+
+}
+.tablebgW {
+	background-color: #999999;
+	width: 100%;
+}
+.tableCenterNew {
+	font-size: 9pt;
+	text-align: center;
+	background-color: #deffde;
+}
+
+.tableSum {
+font-family : Arial;font-size: 8pt;	font-weight: bold;	color: #005A6B;	padding-left: 5px;	border-top: 1px solid #005A6B;	border-bottom: 1px solid #005A6B;	background-color: #A7C2C7;
+}
+.buttonDiv{
+      position:absolute;height:10pt;top:expression(document.body.clientHeight-this.style.pixelHeight+document.body.scrollTop);font:9pt;
+}

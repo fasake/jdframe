@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jdframe.sys.dao.mappers.t_sys_organization">
+   <select   id="getNewZzjgId" resultType="string"> 
+	   SELECT SEQ_ORG_ZZJG_ID.NEXTVAL FROM DUAL 
+	</select>
+	
+   <select parameterType="string" id="getOrgBySwjgDm" resultType="t_sys_organization"> 
+	   SELECT * FROM t_sys_organization  t where t.zzjg_dm =  #{zzjg_dm} 
+	</select>
+	
+	<select parameterType="string" id="getOrgByZzjgId" resultType="t_sys_organization"> 
+	   SELECT * FROM t_sys_organization  t where t.zzjg_id =  #{zzjg_id} 
+	</select>
+	
+	<select parameterType="map" id="getSubOrgByDmAndBz" resultType="t_sys_organization"> 
+	   SELECT * FROM t_sys_organization where zzjg_dm_sj = #{zzjg_dm_sj} and zzjg_bz= #{zzjg_bz} order by zzjg_dm
+	</select>
+	
+	<select parameterType="string" id="getSubOrgByDm" resultType="t_sys_organization"> 
+	   SELECT * FROM t_sys_organization where zzjg_dm_sj = #{zzjg_dm_sj} order by zzjg_dm
+	</select>
+	
+	<select parameterType="string" id="getOrgSjByZzjgdm" resultType="t_sys_organization"> 
+	   SELECT * FROM t_sys_organization where zzjg_dm in (SELECT zzjg_dm_sj FROM t_sys_organization t  where zzjg_dm=#{zzjg_dm})
+	</select>
+	
+	<select parameterType="string" id="getOrg_listPage_ByDmMc" resultType="t_sys_organization"> 
+	   SELECT * FROM t_sys_organization where zzjg_dm_sj=#{zzjg_dm_sj}
+	   <if test="zzjg_dm != null and zzjg_dm!='' ">
+	    and zzjg_dm like '%'|| #{zzjg_dm} ||'%'
+	   </if>
+	   <if test="zzjg_name != null and zzjg_name != '' ">
+	     and zzjg_name like '%'|| #{zzjg_name}|| '%'
+	   </if> 
+	   order by zzjg_dm
+	</select>
+	
+	<select parameterType="string" id="buildAjaxTreeByZzjgId" resultType="t_sys_organization"> 
+	  select 'd.add('||zzjg_id||','||zzjg_id_sj||','''||zzjg_name||''',''javascript:viewOrg('||zzjg_id||')'','||zzjg_id||');' zzjg_name 
+             from t_sys_organization  where zzjg_id_sj = #{zzjg_id_sj}   order by zzjg_dm
+	</select>
+	
+	
+	
+	<update id="updateOrg" parameterType="t_sys_organization">
+		update  t_sys_organization 
+         <set>
+	         <if test="zzjg_name != null" >
+				zzjg_name=#{zzjg_name},
+			 </if>
+			 <if test="zzjg_jc != null" >
+				zzjg_jc=#{zzjg_jc},
+			</if>
+			<if test="zzjg_bz != null" >
+				zzjg_bz=#{zzjg_bz},
+			</if>
+			<if test="zzjg_dz != null" >
+				zzjg_dz=#{zzjg_dz},
+			</if>
+			<if test="zzjg_dh != null" >
+				zzjg_dh=#{zzjg_dh},
+			</if>
+			<if test="zzjg_resp != null" >
+				zzjg_resp=#{zzjg_resp},
+			</if>
+			<if test="zzjg_coord != null" >
+				zzjg_coord=#{zzjg_coord},
+			</if>
+		</set>
+			where zzjg_dm = #{zzjg_dm}
+	</update>
+	
+	<insert id="insertOrg" parameterType="t_sys_organization">
+		insert into t_sys_organization
+		 <trim prefix="(" suffix=")" suffixOverrides="," >
+		      <if test="zzjg_id != null" >
+		        zzjg_id,
+		      </if>
+		      <if test="zzjg_dm != null" >
+		        zzjg_dm,
+		      </if>
+		      <if test="zzjg_name != null" >
+		        zzjg_name,
+		      </if>
+		      <if test="zzjg_jc != null" >
+		        zzjg_jc,
+		      </if>
+		      <if test="zzjg_bz != null" >
+		        zzjg_bz,
+		      </if>
+		      <if test="zzjg_dm_sj != null" >
+		        zzjg_dm_sj,
+		      </if>
+		      <if test="zzjg_dz != null" >
+		        zzjg_dz,
+		      </if>
+		      <if test="zzjg_dh != null" >
+		        zzjg_dh,
+		      </if>
+		      <if test="zzjg_id_sj != null" >
+		        zzjg_id_sj,
+		      </if>
+		      <if test="zzjg_resp != null" >
+		        zzjg_resp,
+		      </if>
+		      <if test="zzjg_coord != null" >
+		        zzjg_coord,
+		      </if>
+       </trim>
+	    <trim prefix="values (" suffix=")" suffixOverrides="," >
+		      <if test="zzjg_id != null" >
+		        #{zzjg_id},
+		      </if>
+		      <if test="zzjg_dm != null" >
+		         #{zzjg_dm},
+		      </if>
+		      <if test="zzjg_name != null" >
+		         #{zzjg_name},
+		      </if>
+		      <if test="zzjg_jc != null" >
+		         #{zzjg_jc},
+		      </if>
+		      <if test="zzjg_bz != null" >
+		         #{zzjg_bz},
+		      </if>
+		      <if test="zzjg_dm_sj != null" >
+		         #{zzjg_dm_sj},
+		      </if>
+		      <if test="zzjg_dz != null" >
+		         #{zzjg_dz},
+		      </if>
+		      <if test="zzjg_dh != null" >
+		         #{zzjg_dh},
+		      </if>
+		      <if test="zzjg_id_sj != null" >
+		         #{zzjg_id_sj},
+		      </if>
+		      <if test="zzjg_resp != null" >
+		         #{zzjg_resp},
+		      </if>
+		      <if test="zzjg_coord != null" >
+		         #{zzjg_coord},
+		      </if>
+	    </trim>
+		
+	
+	</insert>
+	
+	<delete id="deleteOrgByZzjgId" parameterType="string">
+	    delete from t_sys_organization where zzjg_id=#{zzjg_id}
+	
+	</delete>
+	
+	<delete id="deleteOrgByZzjgDm" parameterType="string">
+	    delete from t_sys_organization where zzjg_dm=#{zzjg_dm}
+	
+	</delete>
+	
+</mapper>

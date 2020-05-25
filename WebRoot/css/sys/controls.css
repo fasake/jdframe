@@ -1,0 +1,255 @@
+.hdr .c {
+	font-family : Arial;
+	font-size : 11pt;
+	font-weight : bold;
+	color: #F57E17;
+	border-bottom: 1px solid #80ADBA;
+	padding-left : 2px;
+	padding-bottom : 2px;
+}
+
+/* Detail */
+.hdr .d {
+	font-family : Arial;
+	font-size : 8pt;
+	font-weight : bold;
+	color: #80ADBA;
+}
+
+ 
+
+.hc {
+	font-family : Arial;
+	font-size : 10pt;
+	font-weight : normal;
+	color: #000000;
+	background-color : #FFFFE1;
+	padding : 3px;
+	border: 1px solid #000000;
+}
+ 
+
+.lcb INPUT {
+	color: black;
+	background-color : #FFFFFF;
+	font : normal;
+	text-align : right;
+	font-size : 9px;
+	border : 1px solid #005A6B;
+}
+
+/* ListHeader */
+.lch {
+	font-family : Arial;
+	font-size : 8pt;
+	font-weight : bold;
+	color : #FFFFFF;
+	background-color : #005A6B;
+	width : 100%;
+}
+
+/* ListControl Body */
+.lcb {
+	border-left: 1px solid #005A6B;
+	border-right: 1px solid #005A6B;
+	border-bottom: 1px solid #005A6B;
+	background-color : #DADFE0;
+}
+
+/* header */
+.lcb .header, .header TD, .header TD A {
+	font-family : Arial;
+	font-size : 9pt;
+	font-weight : bold;
+	background-color : #80ADBA;
+	color : #FFFFFF;
+	padding-left : 10px;
+	height : 20px;
+	vertical-align : middle;
+}
+
+/* even rows */
+.even {
+	background-color : #EDEFF0;
+}
+
+.even td {
+	font-family : Arial;
+	font-size : 8pt;
+	padding-left : 10;
+	height : 18px;
+}
+
+/* odd rows */
+.odd  {
+	background-color : #FFFFFF;
+}
+
+.odd  td {
+	font-family : Arial;
+	font-size : 8pt;
+	padding-left : 10;
+	height : 18px;
+}
+
+/* Hyperlinks */
+tr td a {
+	font-family : Arial;
+	font-size : 8pt;
+	text-decoration : none;
+	color : #0000FF;
+}
+
+/* Caption */
+.lch .c {
+	font-family : Arial;
+	font-size : 9pt;
+	font-weight : bold;
+	background-color : #005A6B;
+	color: #FFFFFF;
+}
+
+/* Detail */
+.lch .d {
+	font-family : Arial;
+	font-size : 8pt;
+	font-weight : normal;
+	background-color : #005A6B;
+	color: #FFFFFF;
+}
+
+/* ==========================================
+** TabsetControl
+**
+** Acronym's
+** ------------------------------------------
+** .tsc     = TabSet Control
+** ==========================================
+*/
+
+.tsc  {
+	color: #000000;
+	font-family: sans-serif;
+	font-size : 8pt;
+	font-weight : bold;
+}
+
+.tsc .sel, .tsc .sel A {
+	color: #000000;
+	cursor : hand;
+	vertical-align : middle;
+}
+
+.tsc .body {
+	background-color : #EFEFEF;
+	border-left : 1px solid #005A6B;
+	border-right : 1px solid #005A6B;
+	border-bottom : 1px solid #005A6B;
+}
+
+.tsc .unsel, .tsc .unsel A {
+	color: #FFFFFF;
+	cursor : hand;
+	vertical-align : middle;
+}
+
+.tsc .disabled {
+	color: #8D9DA1;
+	vertical-align : middle;
+}
+
+.tabScrollBtnL {
+	padding-left: 3px;
+	padding-top: 6px;
+	padding-right: 1px;
+	vertical-align : baseline;
+}
+
+.tabScrollBtnR {
+	padding-top: 6px;
+	padding-left: 0px;
+	padding-right: 3px;
+	vertical-align : baseline;
+}
+
+.tabDetail{
+	font-weight: normal;
+	padding-left: 20px;
+}
+
+ 
+
+/* TreeControl */
+.tc {
+	font-family : Arial;
+	font-size : 8pt;
+	font-weight : normal;
+	border : none;
+}
+
+.tc TD {
+	border : none;
+}
+
+/* odd rows */
+.tc .tlodd TR {
+	font-family : Arial;
+	font-size : 8pt;
+	font-weight : normal;
+	background-color : #FFFFFF;
+}
+
+.tc .tlodd TD {
+	border-bottom : 1px solid #DCE8EB;
+}
+
+/* even rows */
+.tc .tleven TR {
+	font-family : Arial;
+	font-size : 8pt;
+	font-weight : normal;
+	background-color : #F3F4F5;
+	border : none;
+}
+
+.tc .tleven TD {
+	border-bottom : 1px solid  #DCE8EB;
+}
+
+
+/* Tree Control Item */
+.ti {
+	width : 100%;
+	padding-left : 4px;
+}
+
+.ti A {
+	color : #000000;
+	padding-left : 4px;
+	text-decoration : none;
+}
+
+/* Selected Tree Control Item */
+.tis {
+	width : 100%;
+	padding-left : 4px;
+	background-color : #FEA217;
+}
+
+.tis A {
+	color : #FFFFFF;
+	padding-left : 4px;
+	font-weight : normal;
+	text-decoration : none;
+}
+
+/* Tree Outline */
+.tol TD  {
+	padding-left : 0;
+}
+
+ 
+.feact {
+	cursor: hand;
+	color: blue;
+}

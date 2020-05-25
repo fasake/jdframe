@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="organiztion"  namespace="/com/jdframe/sys/core/org"	extends="struts-default" >
+	
+		<action	name = "getNodes" class= "com.jdframe.sys.biz.org.DynamicTreeAction">
+			<result	type="freemarker">/sys/core/frame/treeAjaxDynamic.ftl</result>
+		</action>
+		
+		<action	name = "treeSelected" method="selectTreeNode" class= "com.jdframe.sys.biz.org.DynamicTreeAction">
+			<result>/sys/core/org/tree.jsp</result>
+		</action>
+		
+		<action	name = "query" class= "com.jdframe.sys.biz.org.QueryAction">
+			<result	name="success">/sys/core/org/query.jsp</result>
+			<result	name="input">/sys/core/org/query.jsp</result>
+			<result	name="init">/sys/core/org/query.jsp</result>
+		</action>
+		 
+		<action	name = "new" class= "com.jdframe.sys.biz.org.NewAction">
+		    <result	name="success">/sys/core/org/query.jsp</result>
+			<result	name="input">/sys/core/org/new.jsp</result>
+			<result	name="init">/sys/core/org/new.jsp</result>
+		</action>
+		
+		<action	name = "update" class= "com.jdframe.sys.biz.org.UpdateAction">
+			<result	name="success">/sys/core/org/query.jsp</result>
+			<result	name="input">/sys/core/org/update.jsp</result>
+			<result	name="init">/sys/core/org/update.jsp</result>
+		</action> 
+		
+		<action	name = "delete" class= "com.jdframe.sys.biz.org.DeleteAction">
+		    <result	name="success">/sys/core/org/query.jsp</result>
+			<result	name="input">/sys/core/org/query.jsp</result>
+			<result	name="init">/sys/core/org/query.jsp</result>
+		</action> 
+		
+	</package>
+</struts>    

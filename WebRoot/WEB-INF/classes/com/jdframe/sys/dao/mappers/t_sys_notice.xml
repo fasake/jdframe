@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jdframe.sys.dao.mappers.t_sys_notice">
+
+	<select id="getNewNoticeId" resultType="string">
+		SELECT SEQ_Notice_ID.NEXTVAL FROM DUAL
+	</select>
+
+	<select parameterType="string" id="getNoticeByNoticeId"
+		resultType="t_sys_notice">
+		SELECT * FROM t_sys_notice t where t.Notice_id = #{notice_id}
+	</select>
+
+	<select parameterType="map" id="getNoticeAll" resultType="t_sys_notice">
+		SELECT notice_id,notice_title,notice_create_date,notice_expire_date FROM t_sys_notice where
+		notice_zzjg_dm in (SELECT zzjg_dm FROM t_sys_organization a start with
+		zzjg_dm=#{user_zzjg_dm} connect by zzjg_id = PRIOR zzjg_id_sj)
+		and notice_expire_date >= to_date(#{notice_expire_date},'YYYY-MM-DD
+		HH24:MI:SS')
+		order by notice_create_date
+	</select>
+
+	<select parameterType="t_sys_notice" id="getNotice_listPage"
+		resultType="t_sys_notice">
+		SELECT * FROM t_sys_notice where notice_zzjg_dm = #{notice_zzjg_dm}
+
+		<if test="notice_title != null and notice_title != '' ">
+			and notice_title like '%'|| #{notice_title}|| '%'
+		</if>
+
+		<if
+			test="notice_create_date_start != null and notice_create_date_start != '' ">
+			and notice_create_date >=
+			to_date(#{notice_create_date_start},'YYYY-MM-DD HH24:MI:SS')
+		</if>
+
+		<if test="notice_create_date_end != null and notice_create_date_end != '' ">
+			and to_date(#{notice_create_date_end},'YYYY-MM-DD HH24:MI:SS') >
+			notice_create_date
+		</if>
+		order by notice_create_date
+	</select>
+
+
+	<update id="updateNotice" parameterType="t_sys_notice">
+		update t_sys_notice
+		<set>
+			<if test="notice_title != null">
+				notice_title = #{notice_title},
+			</if>
+			<if test="notice_content != null">
+				notice_content = #{notice_content},
+			</if>
+			<if test="notice_level != null">
+				notice_level = #{notice_level},
+			</if>
+			<if test="notice_expire_date != null">
+				notice_expire_date =
+				to_date(#{notice_expire_date},'YYYY-MM-DD HH24:MI:SS'),
+			</if>
+			<if test="notice_zzjg_dm != null">
+				notice_zzjg_dm = #{notice_zzjg_dm},
+			</if>
+			<if test="notice_attach_uri != null">
+				notice_attach_uri = #{notice_attach_uri},
+			</if>
+			<if test="notice_attach_name != null">
+				notice_attach_name = #{notice_attach_name},
+			</if>
+			<if test="notice_attach_content_type != null">
+				notice_attach_content_type = #{notice_attach_content_type},
+			</if>
+		</set>
+		where notice_id = #{notice_id}
+
+	</update>
+
+	<insert id="insertNotice" parameterType="t_sys_notice">
+		insert into t_sys_notice
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="notice_id != null">
+				notice_id,
+			</if>
+			<if test="notice_title != null">
+				notice_title,
+			</if>
+			<if test="notice_content != null">
+				notice_content,
+			</if>
+			<if test="notice_creater != null">
+				notice_creater,
+			</if>
+			<if test="notice_create_date != null">
+				notice_create_date,
+			</if>
+			<if test="notice_level != null">
+				notice_level,
+			</if>
+			<if test="notice_expire_date != null">
+				notice_expire_date,
+			</if>
+			<if test="notice_zzjg_dm != null">
+				notice_zzjg_dm,
+			</if>
+			<if test="notice_attach_name != null">
+				notice_attach_name,
+			</if>
+			<if test="notice_attach_uri != null">
+				notice_attach_uri,
+			</if>
+			<if test="notice_attach_content_type != null">
+				notice_attach_content_type
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="notice_id != null">
+				#{notice_id},
+			</if>
+			<if test="notice_title != null">
+				#{notice_title},
+			</if>
+			<if test="notice_content != null">
+				#{notice_content},
+			</if>
+			<if test="notice_creater != null">
+				#{notice_creater},
+			</if>
+			<if test="notice_create_date != null">
+				to_date(#{notice_create_date},'YYYY-MM-DD HH24:MI:SS'),
+			</if>
+			<if test="notice_level != null">
+				#{notice_level},
+			</if>
+			<if test="notice_expire_date != null">
+				to_date(#{notice_expire_date},'YYYY-MM-DD HH24:MI:SS'),
+			</if>
+			<if test="notice_zzjg_dm != null">
+				#{notice_zzjg_dm},
+			</if>
+			<if test="notice_attach_name != null">
+				#{notice_attach_name},
+			</if>
+			<if test="notice_attach_uri != null">
+				#{notice_attach_uri},
+			</if>
+			<if test="notice_attach_content_type != null">
+				#{notice_attach_content_type},
+			</if>
+		</trim>
+
+	</insert>
+
+	<delete id="deleteNoticeById" parameterType="t_sys_notice">
+		delete from t_sys_notice where notice_id=#{notice_id}
+	</delete>
+</mapper>

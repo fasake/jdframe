@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>    
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"  "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+<taglib>
+	<tlib-version>2.2.3</tlib-version>
+	<jsp-version>1.2</jsp-version>
+	<short-name>pagenation</short-name>
+	<tag>
+	   
+		<name>pages</name>
+		<tag-class>com.jdframe.sys.core.tags.PagesTag</tag-class>
+		<body-content>empty</body-content>
+		<description>翻页标签，标签必须包含在form中</description>
+		<attribute>
+			<name>pageSize</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>每页显示多少条记录</description>
+		</attribute>
+		<attribute>
+			<name>Form</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<description>Html中表单from名称，用于区分一个页面多个翻页标签，默认第一个from</description>
+		</attribute>
+		
+	</tag>
+</taglib> 

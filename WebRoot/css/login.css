@@ -1,0 +1,99 @@
+.float-container {
+	WIDTH: 100%; OVERFLOW: hidden
+}
+.jdframe-window-content {
+	WIDTH: 400px; MARGIN-LEFT: 100px; OVERFLOW: hidden
+}
+#outer {
+	MARGIN: 0px auto; WIDTH: 630px
+}
+#content {
+	
+}
+#logo {
+	MARGIN-TOP: 140px
+}
+#header {
+	MARGIN-TOP: 60px
+}
+#login {
+	
+}
+#console-title {
+	PADDING-BOTTOM: 12px
+}
+.input-row {
+	WIDTH: 100%; OVERFLOW: hidden
+}
+.button-row {
+	WIDTH: 100%; OVERFLOW: hidden
+}
+.notice-row {
+	PADDING-BOTTOM: 4px; FONT-STYLE: italic; PADDING-LEFT: 40px; PADDING-RIGHT: 40px; PADDING-TOP: 4px
+}
+.message-row {
+	PADDING-TOP: 4px
+}
+.input-row {
+	PADDING-TOP: 4px
+}
+#message .message-row {
+	PADDING-BOTTOM: 4px; PADDING-LEFT: 8px; PADDING-RIGHT: 8px; PADDING-TOP: 4px
+}
+.button-row {
+	PADDING-TOP: 12px
+}
+#loginData {
+	PADDING-BOTTOM: 8px; MARGIN: 0px; PADDING-LEFT: 8px; PADDING-RIGHT: 8px; PADDING-TOP: 8px
+}
+.content {
+	PADDING-BOTTOM: 8px; PADDING-LEFT: 8px; PADDING-RIGHT: 8px; PADDING-TOP: 8px
+}
+.input-row LABEL {
+	WIDTH: 8em; FLOAT: left; FONT-WEIGHT: bold
+}
+.input-row .ctrl {
+	WIDTH: 10em; FLOAT: left
+}
+.button-row .ctrl {
+	FLOAT: right
+}
+INPUT {
+	MARGIN: 2px
+}
+SELECT {
+	MARGIN: 2px
+}
+TEXTAREA {
+	MARGIN: 2px
+}
+.textinput {
+	BORDER-BOTTOM: #19355e 1px solid; BORDER-LEFT: #19355e 1px solid; PADDING-BOTTOM: 2px; BACKGROUND-COLOR: #e7effc; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; BORDER-TOP: #19355e 1px solid; BORDER-RIGHT: #19355e 1px solid; PADDING-TOP: 2px
+}
+#j_username {
+	WIDTH: 10em
+}
+#j_password {
+	WIDTH: 10em
+}
+.formButton {
+	BORDER-BOTTOM: #999 1px single; TEXT-ALIGN: center; BORDER-LEFT: #ccc 1px single; PADDING-BOTTOM: 1px; PADDING-LEFT: 8px; PADDING-RIGHT: 8px; BACKGROUND: url(/images/sys/buttons_bg.gif) #2785e5 no-repeat 0px 0px; HEIGHT: 2.2em; COLOR: #fff; FONT-SIZE: 1em; VERTICAL-ALIGN: middle; OVERFLOW: visible; BORDER-TOP: #ccc 1px double; CURSOR: hand; BORDER-RIGHT: #999 1px double; PADDING-TOP: 2px
+}
+.formButton:active {
+	BORDER-BOTTOM: #999 1px single; TEXT-ALIGN: center; BORDER-LEFT: #ccc 1px single; PADDING-BOTTOM: 1px; PADDING-LEFT: 8px; PADDING-RIGHT: 8px; BACKGROUND: url(/images/sys/buttons_bg.gif) #2785e5 no-repeat 0px 0px; HEIGHT: 2.2em; COLOR: #fff; FONT-SIZE: 1em; VERTICAL-ALIGN: middle; OVERFLOW: visible; BORDER-TOP: #ccc 1px double; CURSOR: hand; BORDER-RIGHT: #999 1px double; PADDING-TOP: 2px
+}
+.formButton:hover {
+	BACKGROUND: url(../images/sys/buttons_bg.gif) #248cfc no-repeat -300px 0px
+}
+.formButton-disabled {
+	BORDER-BOTTOM: #999 1px single; TEXT-ALIGN: center; BORDER-LEFT: #ccc 1px single; PADDING-BOTTOM: 1px; PADDING-LEFT: 8px; PADDING-RIGHT: 8px; BACKGROUND: url(/images/sys/buttons_bg.gif) #e3e3e3 repeat-x -1201px 0px; HEIGHT: 2.2em; COLOR: #999999; FONT-SIZE: 1em; VERTICAL-ALIGN: middle; OVERFLOW: visible; BORDER-TOP: #ccc 1px double; BORDER-RIGHT: #999 1px double; PADDING-TOP: 2px
+}
+.login-footer .info P {
+	MARGIN: 2px 6px 2px 0px
+}
+.login-footer {
+	TEXT-ALIGN: left; BACKGROUND-COLOR: transparent; COLOR: #666666; FONT-SIZE: 0.85em; PADDING-TOP: 10px
+}
+.loginFailed {
+	COLOR: #ad0e25
+}

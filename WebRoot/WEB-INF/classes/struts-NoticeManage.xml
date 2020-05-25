@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="notice"  namespace="/com/jdframe/sys/core/notice"	extends="struts-default" >
+	
+		<action	name = "preview" class= "com.jdframe.sys.biz.notice.PreviewAction">
+			<result	name="success">/sys/core/notice/preview.jsp</result>
+			<result	name="input">/sys/core/notice/preview.jsp</result>
+			<result	name="init">/sys/core/notice/preview.jsp</result>
+		</action>
+		
+		<action	name = "query" class= "com.jdframe.sys.biz.notice.QueryAction">
+			<result	name="success">/sys/core/notice/main.jsp</result>
+			<result	name="input">/sys/core/notice/main.jsp</result>
+			<result	name="init">/sys/core/notice/main.jsp</result>
+		</action>
+		 
+		<action	name = "new" class= "com.jdframe.sys.biz.notice.NewAction">
+		    <result	name="success">/sys/core/notice/main.jsp</result>
+			<result	name="input">/sys/core/notice/new.jsp</result>
+			<result	name="init">/sys/core/notice/new.jsp</result>
+		</action>
+		
+		<action	name = "update" class= "com.jdframe.sys.biz.notice.UpdateAction">
+			<result	name="success">/sys/core/notice/main.jsp</result>
+			<result	name="input">/sys/core/notice/update.jsp</result>
+			<result	name="init">/sys/core/notice/update.jsp</result>
+		</action> 
+		
+		<action	name = "delete" class= "com.jdframe.sys.biz.notice.DeleteAction">
+		    <result	name="success">/sys/core/notice/main.jsp</result>
+			<result	name="input">/sys/core/notice/main.jsp</result>
+			<result	name="init">/sys/core/notice/main.jsp</result>
+		</action> 
+		
+	</package>
+</struts>    

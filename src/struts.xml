@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+     <constant name="struts.ui.theme" value="simple" />
+     <!-- 指定WEB应用的编码集，相当于调用HttpServletRequest.setCharacterEncodint方法，如果使用了velocity或freemarker,它也用于指定输出的编码格式 -->  
+     <constant name="struts.i18n.encoding" value="UTF-8" /> 
+      <!-- 指定请求后缀为.action，指定多个请求后缀用逗号分隔    
+      <constant name="struts.action.extension" value="action" /> 
+      -->
+     <!--设置浏览器是否缓存静态内容，建议：开发阶段关闭，运行时开启  -->  
+      <constant name="struts.serve.static.browserCache" value="false" />  
+      <!--当struts.xml配置文件修改后，系统是否重新加载该文件，开发阶段打开此功能  -->  
+      <constant name="struts.configuration.xml.reload" value="true" />  
+      
+      <!--  开发提示：出错时打印更详细的信息-->  
+      <constant name="struts.devMode" value="false" /> 
+      <!-- 指定允许上传的文件最大字节数。默认值是(10M) -->    
+      <constant name="struts.multipart.maxSize" value="10485760"/>    
+      <!-- 设置上传文件的临时文件夹 -->   
+      <constant name="struts.multipart.saveDir " value="/tmp" />
+      <!--  过滤URL -->  
+     <constant name="struts.action.excludePattern" value="/images.*,/servlet.*,/servlet/doTaskServlet.*,/js/*.js,/css/*.css,/dwr.*,/index.jsp"/>
+     <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+     <!-- 国际化支持 -->
+     <constant name="struts.custom.i18n.resources" value="messageResource"></constant>
+     
+     
+     
+     <include file="struts-login.xml"></include>
+     <include file="struts-OrganizationManage.xml" ></include>
+     <include file="struts-UserManage.xml"></include>
+     <include file="struts-MenuManage.xml"></include>
+     <include file="struts-RoleManage.xml"></include>
+     <include file="struts-StationManage.xml"></include>
+     <include file="struts-NoticeManage.xml"></include>
+     <include file="struts-TaskManage.xml"></include>
+     <include file="struts-SwdjManage.xml"></include>
+     <!--Add auto-generated struts configuration here -->
+     <include file="struts-work_dao_model_T_work_tiden.xml"></include>
+     <include file="struts-work-task.xml"></include>
+</struts>    

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jdframe.sys.dao.mappers.t_sys_task">
+
+   <select   id="getNewTaskId" resultType="string"> 
+	   SELECT SEQ_Task_ID.NEXTVAL FROM DUAL 
+	</select>
+	
+	<select parameterType="string" id="getTaskByTaskId" resultType="t_sys_task"> 
+	   SELECT * FROM t_sys_task  t where t.Task_id =  #{task_id}
+	</select>
+	 
+	<select parameterType="map" id="getTask_listPage" resultType="t_sys_task"> 
+	   SELECT * FROM t_sys_task where task_id in(select task_id from t_sys_task_receive where task_receiver=#{task_receiver} )  
+	   <if test="task_status != null and task_status != '' ">
+	    and task_status like '%'|| #{task_status} ||'%'
+	   </if>
+	   <if test="task_title != null and task_title != '' ">
+	     and task_title like '%'|| #{task_title}|| '%'
+	   </if> 
+	   <if test="task_expire_date != null and task_expire_date != '' ">
+	     and  task_deal_date   > task_expire_date
+	   </if> 
+	  
+	   order by Task_ID
+	</select>
+	
+	
+	<select parameterType="map" id="getTask_listPage_ByDefault" resultType="t_sys_task"> 
+	   SELECT * FROM t_sys_task where task_id in(select task_id from t_sys_task_receive where task_receiver=#{task_receiver} )  
+	   and task_status = '0'
+	   order by task_priority,Task_ID
+	</select>
+	
+	
+	<update id="updateTaskStatus" parameterType="t_sys_task">
+		update  t_sys_task set
+					task_status = #{task_status},
+					task_deal_date =  to_date(#{task_deal_date},'YYYY-MM-DD HH24:MI:SS')
+				where task_id = #{task_id}
+
+	</update>
+	
+	<insert id="insertTask" parameterType="t_sys_task">
+		insert into t_sys_task(task_id,
+						task_link,
+						task_title,
+						task_sender,
+						task_expire_date,
+						task_status,
+						task_from,
+						task_priority,
+						task_create_date
+									) 
+						values(#{task_id},
+						#{task_link},
+						#{task_title},
+						#{task_sender},
+						to_date(#{task_expire_date},'YYYY-MM-DD HH24:MI:SS'),
+						#{task_status},
+						#{task_from},
+						#{task_priority},
+						to_date(#{task_create_date},'YYYY-MM-DD HH24:MI:SS')
+										)
+	
+	</insert>
+</mapper>

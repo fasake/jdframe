@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jdframe.sys.dao.mappers.t_sys_consumer">
+   <select id="getConsumerId" resultType="String"> 
+	      	 select seq_t_sys_consumer.nextval as val from dual
+	</select>
+	
+	<select parameterType="t_sys_consumer" id="getConsumerByDlmc" resultType="t_sys_consumer"> 
+	   select * from taxuser.t_sys_consumer where dlmc = #{dlmc}  
+	</select>
+	
+	<select parameterType="t_sys_consumer" id="getConsumerByNsrmc" resultType="t_sys_consumer"> 
+	   select * from taxuser.t_sys_consumer where Nsrmc = #{nsrmc}  
+	</select>
+	
+	<select parameterType="t_sys_consumer" id="getConsumerByDlmcAndDlmm" resultType="t_sys_consumer"> 
+	   select * from taxuser.t_sys_consumer where dlmc = #{dlmc}   and dlmm = #{dlmm} and yxbz='Y'
+	   <if test='swdjzh != null' >
+	       and swdjzh = #{swdjzh}
+	   </if>
+	</select>
+
+	<select  parameterType="map" id="getConsumer_listPage" resultType="t_sys_consumer"> 
+	   select * from taxuser.t_sys_consumer 
+	</select>
+
+	<insert id="insertConsumer"  parameterType="t_sys_consumer">
+		insert into taxuser.t_sys_consumer (nsrbh, nsrmc, dlmc, dlmm, lxdh, zjlx, zjhm, yxbz, zcrq, zcip)
+		  values (#{nsrbh},#{nsrmc},#{dlmc},#{dlmm},#{lxdh},#{zjlx},#{zjhm},#{yxbz},#{zcrq},#{zcip})
+	</insert>
+	
+	<update id="updateConsumer" parameterType="t_sys_consumer">
+		update taxuser.t_sys_consumer set
+			nsrmc=#{nsrmc},
+			dlmc=#{dlmc},
+			dlmm=#{dlmm},
+			lxdh=#{lxdh},
+			zjlx=#{zjlx},
+			zjhm=#{zjhm},
+			yxbz=#{yxbz},
+			zcrq=#{zcrq},
+			zcip=#{zcip}
+			where nsrbh = #{nsrbh}
+	</update>
+	<update id="updateConsumerSwdjzh" parameterType="t_sys_consumer">
+		update taxuser.t_sys_consumer set
+			swdjzh=#{swdjzh}
+			where nsrbh = #{nsrbh}
+	</update>
+	
+	<delete id="deleteConsumer" parameterType="string">
+			delete from taxuser.t_sys_consumer where nsrbh = #{nsrbh}
+	</delete>
+	
+</mapper>

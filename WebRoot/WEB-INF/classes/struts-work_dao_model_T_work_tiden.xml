@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="t_work_tiden"  namespace="/work/biz/tiden"	extends="struts-default" >
+	
+	    <action	name = "query" class= "work.biz.tiden.QueryAction">
+			<result	name="success">/work/biz/tiden/main.jsp</result>
+			<result	name="input">/work/biz/tiden/main.jsp</result>
+			<result	name="init">/work/biz/tiden/main.jsp</result>
+		</action>
+		 
+		<action	name = "new" class= "work.biz.tiden.NewAction">
+		    <result	name="success">/work/biz/tiden/main.jsp</result>
+			<result	name="input">/work/biz/tiden/new.jsp</result>
+			<result	name="init">/work/biz/tiden/new.jsp</result>
+		</action>
+		
+		<action	name = "update" class= "work.biz.tiden.UpdateAction">
+			<result	name="success">/work/biz/tiden/main.jsp</result>
+			<result	name="input">/work/biz/tiden/update.jsp</result>
+			<result	name="init">/work/biz/tiden/update.jsp</result>
+		</action> 
+		
+		<action	name = "delete" class= "work.biz.tiden.DeleteAction">
+		    <result	name="success">/work/biz/tiden/main.jsp</result>
+			<result	name="input">/work/biz/tiden/main.jsp</result>
+			<result	name="init">/work/biz/tiden/main.jsp</result>
+		</action> 	
+	</package>
+</struts>    
